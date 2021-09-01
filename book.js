@@ -23,19 +23,19 @@ showData = datas => {
         console.log(...book.author_name);
         console.log(...book.publisher);
 
-        if (book.hasOwnProperty('publish_date')) {
-            console.log('yes');
-            const publish = book.publish_date;
-            const fp = publish.slice(-1);
-            console.log(...fp);
-            return fp;
-        }
+        // if (book.hasOwnProperty('publish_date')) {
+        //     console.log('yes');
+        //     const publish = book.publish_date;
+        //     const fp = publish.slice(-1);
+        //     console.log(...fp);
+        //     return fp;
+        // }
 
-        const authors = book.author_name;
-        authors.forEach(author => {
-            const aname = author + ',';
-            console.log(aname);
-        });
+        // const authors = book.author_name;
+        // authors.forEach(author => {
+        //     const aname = author + ',';
+        //     console.log(aname);
+        // });
 
 
         const searchResult = document.getElementById('data-show');
@@ -47,16 +47,17 @@ showData = datas => {
                 <img class="card-img-top" src="" alt="">
                 <div class="card-body">
 
-                    <h3 class="card-title"> Book Name: ${book.title}</h3>
-                    <h4> <i>Author Name: </i> </h4>
-                    <h5> <i>Publisher Name:</i></h5>
-                    <h6 class="card-text">First Publish:</h6>
-                </div>
-            </div>
-    
+                    <h5 class="card-title"> Book Name: ${book.title}</h5>
+                    <p> Author Name: <i>${book.author_name} </i > </ >
+                    <p>Publisher Name: <i>${book.publisher}</i></p>
+                    <p class="card-text">First Publish:</p>
+                </div >
+            </div >
+
     `;
 
         searchResult.appendChild(div);
+
     });
 
 
