@@ -7,8 +7,26 @@ const search = () => {
 
     fetch(url)
         .then(res => res.json())
-        .then(data => console.log(data));
+        .then(data => showData(data));
 
+}
+
+showData = datas => {
+    console.log(datas);
+    console.log(datas.numFound);
+
+    const books = datas.docs.slice(0, 5);
+    books.forEach(book => {
+        console.log(book);
+
+        const details = book.text;
+        console.log(details[1]);
+        // details.forEach(detail => {
+        //     console.log(detail.title);
+        // });
+
+
+    });
 
 
 }
