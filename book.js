@@ -1,7 +1,7 @@
 // search data load
 const search = () => {
     const searchField = document.getElementById('search-field');
-    const searchText = searchField.nodeValue;
+    const searchText = searchField.value;
 
     const url = `http://openlibrary.org/search.json?q=${searchText}`;
 
