@@ -30,8 +30,6 @@ showData = datas => {
             console.log(...fp);
         }
 
-
-
         const authors = book.author_name;
         authors.forEach(author => {
             const aname = author + ',';
