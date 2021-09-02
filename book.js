@@ -15,6 +15,8 @@ showData = datas => {
 
     // console.log(datas);
     console.log(datas.numFound);
+    const status = document.getElementById('status-bar');
+    status.innerText = `Total Result Found: ${datas.numFound}`;
 
     const books = datas.docs.slice(0, 5);
     books.forEach(book => {
@@ -36,7 +38,8 @@ showData = datas => {
             }
         }
 
-        document.getElementById('main-body').style.padding = '25px'
+
+        document.getElementById('search-container').style.padding = '25px'
         const searchResult = document.getElementById('data-show');
 
         const div = document.createElement('div');
