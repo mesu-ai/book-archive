@@ -1,21 +1,8 @@
-// clear search result
-const clearResult = () => {
-    const searchResult = document.getElementById('data-show');
-    searchResult.textContent = '';
-    document.getElementById('search-container').style.padding = '0px';
-}
-
-// status massage bar
-const statusUpdate = (massage, color) => {
-    const status = document.getElementById('status-bar');
-    status.style.padding = '20px';
-    status.style.color = color;
-    status.innerText = massage;
-}
-
 
 //load search data
 const search = () => {
+
+    spinnerToggle('block');
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
 
@@ -30,6 +17,7 @@ const search = () => {
 
         // update massage
         statusUpdate('Please Enter The Search Box !', 'red')
+        spinnerToggle('none');
 
 
     } else {
@@ -55,6 +43,7 @@ showData = datas => {
         statusUpdate('No Result Found. Please Enter Again !', 'rgb(105, 7, 7)');
 
         clearResult();
+        spinnerToggle('none');
     }
 
     else {
@@ -95,10 +84,30 @@ showData = datas => {
 
         });
 
+        spinnerToggle('none');
+
+
+
     }
 
+}
 
+// spinner
+const spinnerToggle = displayStyle => {
+    document.getElementById('spinner').style.display = displayStyle;
+}
 
+// clear search result
+const clearResult = () => {
+    const searchResult = document.getElementById('data-show');
+    searchResult.textContent = '';
+    document.getElementById('search-container').style.padding = '0px';
+}
 
-
+// status massage bar
+const statusUpdate = (massage, color) => {
+    const status = document.getElementById('status-bar');
+    status.style.padding = '20px';
+    status.style.color = color;
+    status.innerText = massage;
 }

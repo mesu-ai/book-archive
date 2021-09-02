@@ -20,6 +20,12 @@ span{
 #staus-container{
     background-image: linear-gradient(white,wheat,white);
 }
+
+#spinner{
+    display:none;
+}
+
+
 .card-design{
     background-color: wheat;
 }
