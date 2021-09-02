@@ -24,14 +24,15 @@
 
         </div>
 
+        <!-- d-flex flex-lg-row flex-column justify-content-center align-items-center -->
         <!-- search box -->
-        <section class="container w-50 my-5 ">
+        <section class="container w-50 my-5  ">
 
-            <div class="input-group mb-3 shadow-lg">
+            <div class="input-group mb-3 shadow-lg d-flex flex-wrap ">
                 <input id="search-field" type="text" class="form-control fs-5 fw-bold" placeholder="Input Keyword !"
                     aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button onclick="search()" class="btn btn-outline-primary w-25 fs-5 fw-bold" type="button"
-                    id="search-btn">Search</button>
+                <button onclick="search()" class=" btn btn-outline-primary btn-dark px-3 fs-5 fw-bold text-white"
+                    type="button" id="search-btn">Search</button>
             </div>
 
         </section>
@@ -51,7 +52,7 @@
 
         <!-- search result -->
         <section id="search-container" class="bg-white  rounded-3 mt-3 ">
-            <div id="data-show" class="row row-cols-3 g-4 "> </div>
+            <div id="data-show" class="row row-cols-lg-3 row-cols-md-2 row-cols-1  g-4 "> </div>
         </section>
 
     </main>
