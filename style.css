@@ -15,7 +15,7 @@ span{
 }
 
 #staus-container{
-    color: green;
+    color: rgb(5, 204, 5);
     background-image: linear-gradient(white,rgb(194, 191, 191),white);
 }
 .card-design{

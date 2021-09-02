@@ -13,10 +13,12 @@ const search = () => {
 
 }
 
+
+// show search result
 showData = datas => {
 
     // console.log(datas);
-    console.log(datas.numFound);
+    // console.log(datas.numFound);
     const status = document.getElementById('status-bar');
     status.style.padding = '20px';
     status.innerText = `Total Result Found: ${datas.numFound}`;
@@ -26,12 +28,12 @@ showData = datas => {
 
     const books = datas.docs.slice(0, 10);
     books.forEach(book => {
-        console.log(book);
 
-        console.log('cover:', book.cover_i);
-        console.log('name:', book.title);
-        console.log('author:', ...book.author_name);
-        console.log('publisher:', ...book.publisher);
+        // console.log(book);
+        // console.log('cover:', book.cover_i);
+        // console.log('name:', book.title);
+        // console.log('author:', ...book.author_name);
+        // console.log('publisher:', ...book.publisher);
 
         const coverUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
 
