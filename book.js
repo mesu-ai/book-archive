@@ -51,8 +51,10 @@ const search = () => {
 showData = datas => {
 
     const resultFound = `${datas.numFound}`;
-    if (resultFound == 0) {
+    if (resultFound === '0') {
         statusUpdate('No Result Found. Please Enter Again !', 'rgb(105, 7, 7)');
+
+        clearResult();
     }
 
     else {
@@ -66,6 +68,7 @@ showData = datas => {
         const books = datas.docs.slice(0, 20);
         books.forEach(book => {
 
+            // book cover image
             const coverUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
 
 
@@ -79,10 +82,10 @@ showData = datas => {
                 <img class="bg-opacity-100 w-75 p-2 bg-white mx-auto card-img-top " src="${coverUrl}" alt="" height="220">
                 <div class="card-body">
 
-                    <h5 class="card-title"><span> Book Name:</span> ${book.title}</h5>
-                    <p> <span>Author Name:</span><i> ${book.author_name} </i > </ >
-                    <p> <span>Publisher Name:</span> <i>${book.publisher}</i></p>
-                    <p class="card-text"><span>First Publish:</span> ${book.first_publish_year}</p>
+                    <h5 class="card-title"><span> Book Name:</span> ${book?.title ?? ''}</h5>
+                    <p> <span>Author Name:</span><i> ${book?.author_name ?? ''} </i > </ >
+                    <p> <span>Publisher Name:</span> <i>${book?.publisher ?? ''}</i></p>
+                    <p class="card-text"><span>First Publish:</span> ${book?.first_publish_year ?? ''}</p>
                 </div >
             </div >
 
