@@ -1,4 +1,10 @@
-// ststus/massage bar
+const clearResult = () => {
+    const searchResult = document.getElementById('data-show');
+    searchResult.textContent = '';
+    document.getElementById('search-container').style.padding = '0px';
+}
+
+// status massage bar
 const statusUpdate = (massage, color) => {
     const status = document.getElementById('status-bar');
     status.style.padding = '20px';
@@ -15,15 +21,15 @@ const search = () => {
     // clear search box
     searchField.value = '';
 
-    // check the validation of search keyword
-    if (searchText === '') {
+    // check input data
+    if (searchText == '') {
+
+        // clear search result
+        clearResult();
 
         // update massage
         statusUpdate('Please Enter The Search Box !', 'red')
 
-        // clear search result
-        const searchResult = document.getElementById('data-show');
-        searchResult.textContent = '';
 
     } else {
 
@@ -48,6 +54,7 @@ showData = datas => {
     const searchResult = document.getElementById('data-show');
     searchResult.textContent = '';
 
+
     // take 1st 20 search result
     const books = datas.docs.slice(0, 20);
     books.forEach(book => {
@@ -71,7 +78,7 @@ showData = datas => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-            <div class="card h-100 text-center rounded-3 shadow-lg card-design p-3">
+            <div class="card h-100 p-3 text-center rounded-3 shadow-lg card-design">
                 <img class="bg-opacity-100 w-75 p-2 bg-white mx-auto card-img-top " src="${coverUrl}" alt="" height="220">
                 <div class="card-body">
 
