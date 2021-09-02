@@ -1,3 +1,4 @@
+// clear search result
 const clearResult = () => {
     const searchResult = document.getElementById('data-show');
     searchResult.textContent = '';
@@ -13,7 +14,7 @@ const statusUpdate = (massage, color) => {
 }
 
 
-// search data load
+//load search data
 const search = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
@@ -39,6 +40,7 @@ const search = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => showData(data));
+        // .catch(error => errorMsg(error));
 
     }
 
@@ -49,35 +51,31 @@ const search = () => {
 // show search result
 showData = datas => {
 
-    statusUpdate(`Total Books Found: ${datas.numFound}`, 'green');
+    const resultFound = `${datas.numFound}`;
+    if (resultFound == 0) {
+        statusUpdate('No Result Found. Please Enter Again !', 'rgb(105, 7, 7)');
+    }
 
-    const searchResult = document.getElementById('data-show');
-    searchResult.textContent = '';
+    else {
 
+        statusUpdate(`Total Books Found: ${datas.numFound}`, 'green');
 
-    // take 1st 20 search result
-    const books = datas.docs.slice(0, 20);
-    books.forEach(book => {
+        const searchResult = document.getElementById('data-show');
+        searchResult.textContent = '';
 
-        const coverUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
+        // take 1st 20 search result
+        const books = datas.docs.slice(0, 20);
+        books.forEach(book => {
 
-
-        // const firstPublish = () => {
-        //     if (book.hasOwnProperty('publish_date')) {
-        //         const dates = book.publish_date;
-        //         const date = dates[dates.length - 1];
-        //         return date;
-        //         // return date.slice(-1);
-        //     }
-        // }
+            const coverUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
 
 
-        document.getElementById('search-container').style.padding = '25px'
+            document.getElementById('search-container').style.padding = '25px'
 
-        // create a div and show search result
-        const div = document.createElement('div');
-        div.classList.add('col');
-        div.innerHTML = `
+            // create a div and show search result
+            const div = document.createElement('div');
+            div.classList.add('col');
+            div.innerHTML = `
             <div class="card h-100 p-3 text-center rounded-3 shadow-lg card-design">
                 <img class="bg-opacity-100 w-75 p-2 bg-white mx-auto card-img-top " src="${coverUrl}" alt="" height="220">
                 <div class="card-body">
@@ -91,9 +89,14 @@ showData = datas => {
 
     `;
 
-        searchResult.appendChild(div);
+            searchResult.appendChild(div);
 
-    });
+        });
+
+    }
+
+
+
 
 
 }

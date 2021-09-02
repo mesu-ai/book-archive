@@ -8,7 +8,9 @@ body{
     margin:20px 0px;
     background-color:rgb(238, 236, 234);
     font-family: 'Poppins', sans-serif;
+    
 }
+
 span{
     font-style: normal;
     font-weight: 700;
@@ -16,7 +18,6 @@ span{
 }
 
 #staus-container{
-    /* color: rgb(5, 204, 5); */
     background-image: linear-gradient(white,rgb(194, 191, 191),white);
 }
 .card-design{
