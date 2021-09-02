@@ -40,7 +40,6 @@ const search = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => showData(data));
-        // .catch(error => errorMsg(error));
 
     }
 
