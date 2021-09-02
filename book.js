@@ -57,7 +57,7 @@ showData = datas => {
         div.classList.add('col');
         div.innerHTML = `
             <div class="card h-100 text-center rounded-3 shadow-lg card-design p-3">
-                <img class="bg-opacity-50 w-75 p-2 bg-white mx-auto card-img-top " src="${coverUrl}" alt="" height="220">
+                <img class="bg-opacity-100 w-75 p-2 bg-white mx-auto card-img-top " src="${coverUrl}" alt="" height="220">
                 <div class="card-body">
 
                     <h5 class="card-title"><span> Book Name:</span> ${book.title}</h5>

@@ -6,7 +6,7 @@
 
 body{
     margin:20px 0px;
-    background-color: wheat;
+    background-color:rgb(238, 236, 234);
     font-family: 'Poppins', sans-serif;
 }
 span{
@@ -19,6 +19,6 @@ span{
     background-image: linear-gradient(white,rgb(194, 191, 191),white);
 }
 .card-design{
-    background-color: rgb(216, 208, 183);
+    background-color: wheat;
 }
 
